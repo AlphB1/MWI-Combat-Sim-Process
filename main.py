@@ -4,7 +4,6 @@ import random
 from datetime import datetime
 from pprint import pprint
 from matplotlib import pyplot as plt
-from matplotlib.lines import Line2D
 
 from price import PriceGetter
 
@@ -78,6 +77,7 @@ class SimulationData:
     def __init__(self):
         self.all_data = []
         self.price_getter = PriceGetter()
+        print('Data ')
         self.simulation_time = None
         self.convex_chain = None
 
@@ -132,6 +132,8 @@ sd = SimulationData()
 for file in os.listdir('./data'):
     if file.endswith('.json'):
         sd.add_data(os.path.join('./data', file), com_buff=True)
+        print(file)
+print('All data loaded.')
 pprint(sd.all_data)
 for res in sd.all_data:
     if get_key(res.key) == '单普地':
@@ -144,7 +146,10 @@ sd.wash_data(
     inferior_filter=True,
     inferior_filter_coefficient=0.8
 )
+print('All data washed.')
+pprint(sd.all_data)
 sd.find_convex_hull()
+print('Convex hull found.')
 
 fig, ax = plt.subplots()
 fig.set_size_inches(19.2, 10.8)
@@ -160,7 +165,7 @@ for result in sd.all_data:
                s=25 * (4 * result.deaths_per_hour + 1), color=result.color,
                marker='x' if result.oom else 'o')
     ax.text(result.exp_per_hour, result.profit_per_day, result.name, color=result.color,
-            fontsize=14, rotation=0)
+            fontsize=12, rotation=0)
 for i in range(1, len(sd.convex_chain)):
     ax.plot([sd.convex_chain[i - 1].exp_per_hour, sd.convex_chain[i].exp_per_hour],
             [sd.convex_chain[i - 1].profit_per_day, sd.convex_chain[i].profit_per_day],
