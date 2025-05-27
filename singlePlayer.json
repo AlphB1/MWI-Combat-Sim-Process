@@ -1,0 +1,364 @@
+{
+  "player": {
+    "attackLevel": 90,
+    "magicLevel": 1,
+    "powerLevel": 105,
+    "rangedLevel": 1,
+    "defenseLevel": 90,
+    "staminaLevel": 90,
+    "intelligenceLevel": 90,
+    "equipment": [
+      {
+        "itemLocationHrid": "/item_locations/head",
+        "itemHrid": "/items/fluffy_red_hat",
+        "enhancementLevel": 5
+      }, {
+        "itemLocationHrid": "/item_locations/body",
+        "itemHrid": "/items/demonic_plate_body",
+        "enhancementLevel": 5
+      }, {
+        "itemLocationHrid": "/item_locations/legs",
+        "itemHrid": "/items/demonic_plate_legs",
+        "enhancementLevel": 5
+      }, {
+        "itemLocationHrid": "/item_locations/feet",
+        "itemHrid": "/items/polar_bear_shoes",
+        "enhancementLevel": 10
+      }, {
+        "itemLocationHrid": "/item_locations/hands",
+        "itemHrid": "/items/magnetic_gloves",
+        "enhancementLevel": 5
+      }, {
+        "itemLocationHrid": "/item_locations/main_hand",
+        "itemHrid": "/items/granite_bludgeon",
+        "enhancementLevel": 5
+      }, {
+        "itemLocationHrid": "/item_locations/off_hand",
+        "itemHrid": "/items/gobo_defender",
+        "enhancementLevel": 5
+      }, {
+        "itemLocationHrid": "/item_locations/pouch",
+        "itemHrid": "/items/giant_pouch",
+        "enhancementLevel": 0
+      }, {
+        "itemLocationHrid": "/item_locations/neck",
+        "itemHrid": "/items/necklace_of_wisdom",
+        "enhancementLevel": 0
+      }, {
+        "itemLocationHrid": "/item_locations/earrings",
+        "itemHrid": "/items/earrings_of_regeneration",
+        "enhancementLevel": 0
+      }, {
+        "itemLocationHrid": "/item_locations/ring",
+        "itemHrid": "/items/ring_of_regeneration",
+        "enhancementLevel": 0
+      }
+    ]
+  },
+  "food": {
+    "/action_types/combat": [
+      {
+        "itemHrid": "/items/spaceberry_cake"
+      }, {
+        "itemHrid": "/items/spaceberry_cake"
+      }, {
+        "itemHrid": "/items/star_fruit_yogurt"
+      }
+    ]
+  },
+  "drinks": {
+    "/action_types/combat": [
+      {
+        "itemHrid": "/items/wisdom_coffee"
+      }, {
+        "itemHrid": "/items/super_power_coffee"
+      }, {
+        "itemHrid": "/items/swiftness_coffee"
+      }
+    ]
+  },
+  "abilities": [
+    {
+      "abilityHrid": "/abilities/fierce_aura",
+      "level": "10"
+    }, {
+      "abilityHrid": "/abilities/frenzy",
+      "level": "25"
+    }, {
+      "abilityHrid": "/abilities/berserk",
+      "level": "25"
+    }, {
+      "abilityHrid": "/abilities/fracturing_impact",
+      "level": "25"
+    }, {
+      "abilityHrid": "/abilities/sweep",
+      "level": "25"
+    }
+  ],
+  "triggerMap": {
+    "/items/spaceberry_cake": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/missing_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 375
+      }
+    ],
+    "/items/spaceberry_donut": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/missing_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 300
+      }
+    ],
+    "/items/star_fruit_yogurt": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/missing_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 375
+      }
+    ],
+    "/items/star_fruit_gummy": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/missing_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 300
+      }
+    ],
+    "/items/wisdom_coffee": [],
+    "/items/lucky_coffee": [],
+    "/items/swiftness_coffee": [],
+    "/items/critical_coffee": [],
+    "/items/power_coffee": [],
+    "/items/super_power_coffee": [],
+    "/items/ultra_power_coffee": [],
+    "/items/ranged_coffee": [],
+    "/items/super_ranged_coffee": [],
+    "/items/ultra_ranged_coffee": [],
+    "/items/stamina_coffee": [],
+    "/items/super_stamina_coffee": [],
+    "/items/ultra_stamina_coffee": [],
+    "/abilities/fierce_aura": [],
+    "/abilities/speed_aura": [],
+    "/abilities/critical_aura": [],
+    "/abilities/frenzy": [],
+    "/abilities/berserk": [],
+    "/abilities/precision": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 300
+      }
+    ],
+    "/abilities/vampirism": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/missing_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 200
+      }, {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 300
+      }
+    ],
+    "/abilities/cleave": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 1000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/maim": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/crippling_slash": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 2000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/sweep": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 1000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/stunning_blow": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/fracturing_impact": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 2000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/impale": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/puncture": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/penetrating_strike": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 2000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/rain_of_arrows": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 1000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ],
+    "/abilities/penetrating_shot": [
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/number_of_dead_units",
+        "comparatorHrid": "/combat_trigger_comparators/less_than_equal",
+        "value": 1
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/all_enemies",
+        "conditionHrid": "/combat_trigger_conditions/current_hp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 2000
+      },
+      {
+        "dependencyHrid": "/combat_trigger_dependencies/self",
+        "conditionHrid": "/combat_trigger_conditions/current_mp",
+        "comparatorHrid": "/combat_trigger_comparators/greater_than_equal",
+        "value": 400
+      }
+    ]
+  },
+  "zone": "/actions/combat/fly",
+  "simulationTime": "24",
+  "houseRooms": {
+    "/house_rooms/dairy_barn": 0,
+    "/house_rooms/garden": 0,
+    "/house_rooms/log_shed": 0,
+    "/house_rooms/forge": 0,
+    "/house_rooms/workshop": 0,
+    "/house_rooms/sewing_parlor": 0,
+    "/house_rooms/kitchen": 0,
+    "/house_rooms/brewery": 0,
+    "/house_rooms/laboratory": 0,
+    "/house_rooms/observatory": 0,
+    "/house_rooms/dining_room": 0,
+    "/house_rooms/library": 0,
+    "/house_rooms/dojo": 0,
+    "/house_rooms/gym": 0,
+    "/house_rooms/armory": 0,
+    "/house_rooms/archery_range": 0,
+    "/house_rooms/mystical_study": 0
+  }
+}
